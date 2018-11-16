@@ -103,7 +103,7 @@ class api:
         data (json, dict): The post.
         
         # Returns 
-        True 
+        :True 
         
         # Todo
         Handle the exception when the data could not be stored.
