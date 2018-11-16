@@ -11,20 +11,4 @@
 
 ### Basic usage
 
-Let `creds_path` the ath to the `creds.json` file and `sheet_name` the google sheet name.
-To init a `api` session just `api(creds_path, sheet_name)`.
-
-#### `api.get_pd()`
-
-- Takes no parameters.
-- Return a pandas `DataFrame` containing the sheet.
-
-#### `api.get(id)`
-
-- Takes as parameter the `id` of the post.
-- Returns the post JSON.
-
-#### `api.post(data)`
-
-- Takes as parameter a JSON/dict (the post).
-- Returns `True` if was added succesfully or `False` if already exists/error.
+Got to the [docs](api_docs.md).
