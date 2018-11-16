@@ -20,9 +20,12 @@ class api:
         """
         Inits the API class.
         
-        :param creds_path: Path to the credential file `creds.json`.
-        :param sheet_name: Name of the google sheet.
-        :return: Initialized class.
+        # Arguments
+        creds_path (str): Path to the credential file `creds.json`.
+        sheet_name (str): Name of the google sheet.
+        
+        # Returns 
+        (class): Initialized class.
         """
 
         self.creds_path = creds_path
@@ -35,7 +38,8 @@ class api:
         """
         Authorize a session with the given credentials and sheet name.
         
-        :return: Session object.
+        # Returns 
+        (class): Session.
         """
         
         credentials = sac.from_json_keyfile_name(self.creds_path, self.scope)
@@ -46,7 +50,8 @@ class api:
         """
         Opens the `sheet_name` google sheet.
 
-        :return: The google sheet object.
+        # Returns 
+        (class): The google sheet.
         """
         
         gc = self.auth()
@@ -56,7 +61,8 @@ class api:
         """
         Reads the opened sheet and stores the information in a DataFrame.
         
-        :return: A pandas DataFrame with the sheet data.
+        # Returns 
+        (pd.DataFrame) The sheet data with columns `id` and `content`.
         """
         
         sheet = self.open()
@@ -68,10 +74,14 @@ class api:
         """
         Gets the post with the given id.
         
-        :param get_id: The id form the post you are requesting.
-        :return: The post information in JSON format. 
+        # Arguments
+        get_id (id, str): The id form the post you are requesting.
         
-        :todo: Handle the exception for no existing ids.
+        # Returns 
+        (json) The requested post. 
+        
+        # Todo 
+        Handle the exception for no existing ids.
         """
 
         sheet = self.open()       
@@ -89,10 +99,14 @@ class api:
         """
         Stores a given post in the opened google sheet.
 
-        :param data: The post in dict/JSON format.
-        :return: True 
+        # Arguments 
+        data (json, dict): The post.
         
-        :todo: Handle the exception when the data could not be stored.
+        # Returns 
+        True 
+        
+        # Todo
+        Handle the exception when the data could not be stored.
         """
 
         sheet = self.open()
