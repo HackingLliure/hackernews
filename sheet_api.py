@@ -62,7 +62,7 @@ class api:
         Reads the opened sheet and stores the information in a DataFrame.
         
         # Returns 
-        (pd.DataFrame) The sheet data with columns `id` and `content`.
+        (pd.DataFrame): The sheet data with columns `id` and `content`.
         """
         
         sheet = self.open()
@@ -78,7 +78,7 @@ class api:
         get_id (id, str): The id form the post you are requesting.
         
         # Returns 
-        (json) The requested post. 
+        (json): The requested post. 
         
         # Todo 
         Handle the exception for no existing ids.

@@ -11,4 +11,12 @@
 
 ### Basic usage
 
-Got to the [docs](api_docs.md).
+Got to the [docs](docs/api.md).
+
+### Docs generation
+
+Used [pydoc-markdown](https://github.com/NiklasRosenstein/pydoc-markdown): 
+
+```shell
+pydocmd simple sheet_api++ > docs/api.md
+```

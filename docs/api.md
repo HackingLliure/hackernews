@@ -40,7 +40,7 @@ Reads the opened sheet and stores the information in a DataFrame.
 
 __Returns__
 
-(pd.DataFrame) The sheet data with columns `id` and `content`.
+`(pd.DataFrame)`: The sheet data with columns `id` and `content`.
 
 ### get
 ```python
@@ -55,7 +55,7 @@ __Arguments__
 
 __Returns__
 
-(json) The requested post.
+`(json)`: The requested post.
 
 __Todo__
 
