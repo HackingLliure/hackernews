@@ -6,12 +6,12 @@ import json
 creds_path = 'creds.json'
 sheet_name = 'hackernews'
 
-class api:
+class SheetApi:
     def __init__(self, creds_path, sheet_name):
         self.creds_path = creds_path
         self.sheet_name = sheet_name
-        self.scope = ['https://spreadsheets.google.com/feeds', 
-                'https://www.googleapis.com/auth/drive']
+        self.scope = [  'https://spreadsheets.google.com/feeds', 
+                        'https://www.googleapis.com/auth/drive' ]
 
     def auth(self):
         credentials = sac.from_json_keyfile_name(self.creds_path, self.scope)
@@ -42,22 +42,22 @@ class api:
     def post(self, data):
         sheet = self.open()
         
-        sheet.append_row([data["id"], str(data).replace("\'", "\"")])
+        sheet.append_row([data['id'], str(data).replace('\'','\"')])
 
         return True
 
 def test():
     test_id = 69
     
-    sess = api(creds_path, sheet_name)
+    sess = SheetApi(creds_path, sheet_name)
 
     df = sess.get_pd()
-    print(df["id"])
+    print(df['id'])
 
     data = sess.get(test_id)
     print(data['id'], data['url'])
 
-    test_json = { "id": 69, "url": "hackinglliure.com" }
+    test_json = { 'id': 1337, 'url': 'xd.1337' }
 
     print(sess.post(test_json))
 
